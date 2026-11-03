@@ -13,33 +13,38 @@ integer values.
 - `make`, `cc`, and `ar`
 - Optional: `valgrind` for the memory probe
 
-## Usage
+## Quick workflow
 
-Clone this repository, then run the checker with the path to the student's
-`ft_printf` project:
+Clone the checker once into your Home directory:
 
 ```bash
-git clone https://github.com/bossyassine78-ship-it/printf_checker.git
-cd printf_checker
-./ft_printf_eval.py /path/to/student/ft_printf
+git clone https://github.com/bossyassine78-ship-it/printf_checker.git ~/printf_checker
 ```
 
-From inside the student's repository, this also works:
+Then, when you need to evaluate a student, enter their `ft_printf` project:
 
 ```bash
-/path/to/printf_checker/ft_printf_eval.py .
+cd /path/to/student/ft_printf
 ```
 
-Run focused bonus probes:
+Run the mandatory checker from there:
 
 ```bash
-./ft_printf_eval.py /path/to/student/ft_printf --bonus
+python3 ~/printf_checker/ft_printf_eval.py .
 ```
 
-Run the optional Valgrind mixed-conversion probe:
+The final `.` means: test the directory where you are currently located.
+
+For the optional bonus probes:
 
 ```bash
-./ft_printf_eval.py /path/to/student/ft_printf --memory
+python3 ~/printf_checker/ft_printf_eval.py . --bonus
+```
+
+For the optional Valgrind mixed-conversion probe:
+
+```bash
+python3 ~/printf_checker/ft_printf_eval.py . --memory
 ```
 
 The checker runs 35 strict mandatory differential tests for `cspdiuxX%`.
